@@ -50,7 +50,6 @@ function generatePassword() {
       specialQuestion = false;
       passwordLength = 0;
       writePassword();
-      console.log(passwordComplete);
     }
 
     if ((passwordLength < 8 || passwordLength > 128) && (lowerQuestion == true || upperQuestion == true || numberQuestion == true || specialQuestion == true)) {
@@ -61,7 +60,6 @@ function generatePassword() {
       specialQuestion = false;
       passwordLength = 0;
       generatePassword();
-      console.log(passwordComplete);
     }
 
     if ((passwordLength >= 8 && passwordLength <= 128) && (lowerQuestion == false && upperQuestion == false && numberQuestion == false && specialQuestion == false)) {
@@ -72,7 +70,16 @@ function generatePassword() {
       specialQuestion = false;
       passwordLength = 0;
       writePassword();
-      console.log(passwordComplete);
+    }
+
+    if (isNaN(passwordLength)) {
+      alert('Password length must be a number!')
+      lowerQuestion = false;
+      upperQuestion = false;
+      numberQuestion = false;
+      specialQuestion = false;
+      passwordLength = 0;
+      writePassword();
     }
 
     if ((passwordLength >= 8 && passwordLength <= 128) && (lowerQuestion == true || upperQuestion == true || numberQuestion == true || specialQuestion == true)) {
