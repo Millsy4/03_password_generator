@@ -12,7 +12,10 @@ function writePassword() {
 
 var passwordComplete = "";
 
+// Generate a password to use for the #password input
 function generatePassword() {
+  // Create variables that will hold the arrays of the possible inputs for
+  // the different values within the password
   var lowerAlphas = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
                      'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
                      'w', 'x', 'y', 'z'];
@@ -23,11 +26,15 @@ function generatePassword() {
                       ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@',
                       '[', ']', '^', '_', '`', '{', '}', '|'];
   var allNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+  // Create variables that will be used to hold the information from
+  // the questions that will be asked
   var lowerQuestion = false;
   var upperQuestion = false;
   var numberQuestion = false;
   var specialQuestion = false;
   var passwordLength = 0;
+  // Create variables that will be used to "count" within if else statements
+  // to confirm that the certain necessary criteria will be met
   var lowerAlphasCounter = 0;
   var upperAlphasCounter = 0;
   var numbersCounter = 0;
